@@ -1,17 +1,25 @@
 [package]
-name = "contract"
+name = "counter"
+description = "Counter solana countract which shows incrementing a stored data"
+author = ["Alexander Ewetumo <alex.ewetumo@gmail.com>"]
+repository= "https://github.com/influx6/dapps"
+license = "MIT"
 version = "0.1.0"
 edition = "2021"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
-
 [features]
 no-entrypoint = []
 
+[lib]
+name = "counter"
+crate-type = ["cdylib", "lib"]
 
 [dependencies]
-
+borsh = "0.9.1"
+borsh-derive = "0.9.1"
+solana-program = "=1.9.2"
 
 [dev-dependencies]
-solana-program-test="=1.7.9"
-solana-sdk="1.7.9"
+solana-program-test = "=1.9.2"
+solana-sdk = "=1.9.2"
